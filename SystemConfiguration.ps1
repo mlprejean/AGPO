@@ -1,4 +1,4 @@
-﻿### Variables
+### Variables
 $TimeStamp = Get-Date
 $ScriptDir = "C:\Temp\SystemConfiguration\"
 $GPODir = $ScriptDir + "Extracted\SystemConfiguration\GPO_Backup"
@@ -75,6 +75,8 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegPath = "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX"
     $RegName = "iexplore.exe"
     $RegValue = "1"
+    #Reg Key does not yet exist
+    New-Item -Path $RegPath -Name $RegName
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog iexplore
@@ -83,6 +85,8 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegPath = "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX"
     $RegName = "iexplore.exe"
     $RegValue = "1"
+    #Reg Key does not yet exist
+    New-Item -Path $RegPath -Name $RegName
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog iexplore
@@ -91,6 +95,8 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegPath = "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_ALLOW_USER32_EXCEPTION_HANDLER_HARDENING"
     $RegName = "iexplore.exe"
     $RegValue = "1"
+    #Reg Key does not yet exist
+    New-Item -Path $RegPath -Name $RegName
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog iexplore
@@ -99,6 +105,8 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegPath = "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_ALLOW_USER32_EXCEPTION_HANDLER_HARDENING"
     $RegName = "iexplore.exe"
     $RegValue = "1"
+    #Reg Key does not yet exist
+    New-Item -Path $RegPath -Name $RegName
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog Allow Encryption Oracle
@@ -107,6 +115,8 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters"
     $RegName = "AllowEncryptionOracle"
     $RegValue = "1"
+    #Reg Key does not yet exist
+    New-Item -Path $RegPath -Name $RegName
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog Allow Encryption Oracle
@@ -115,6 +125,8 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegPath = "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP\Parameters"
     $RegName = "AllowEncryptionOracle"
     $RegValue = "1"
+    #Reg Key does not yet exist
+    New-Item -Path $RegPath -Name $RegName
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog Defalut Secure Protocols

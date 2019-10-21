@@ -53,6 +53,13 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
    
 ## Changing Reg Keys Below
 
+    #Set Credentials
+    #Needs Admin credentials in order to create registry keys 
+    #They can be re-valued without this
+
+    $credential = Get-Credential -Credential iammred\administrator
+    Enter-PSSession -ComputerName sql1 -Credential $credential
+
     ### MSS Settings - Eventlog Features Overwite
     $TimeStamp = Get-Date
     LogWrite "$Features Overwrite Settings"
@@ -76,8 +83,8 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegName = "iexplore.exe"
     $RegValue = "1"
     #Reg Key does not yet exist
-    #New-Item -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl" -Name "FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX" -Force
-    #New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
+    New-Item -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl" -Name "FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX" -Force
+    New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
 
     ### MSS Settings - Eventlog iexplore

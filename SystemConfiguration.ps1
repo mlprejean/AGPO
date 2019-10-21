@@ -76,7 +76,7 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegName = "iexplore.exe"
     $RegValue = "1"
     #Reg Key does not yet exist
-    New-Item -Path HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl -Name FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX -Force
+    New-Item -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl" -Name "FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX" -Force
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog iexplore
@@ -86,7 +86,7 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegName = "iexplore.exe"
     $RegValue = "1"
     #Reg Key does not yet exist
-    New-Item -Path HKLM:\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl -Name FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX -Force
+    New-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl" -Name "FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX" -Force
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog iexplore
@@ -96,7 +96,7 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegName = "iexplore.exe"
     $RegValue = "1"
     #Reg Key does not yet exist
-    New-Item -Path HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl -Name FEATURE_ALLOW_USER32_EXCEPTION_HANDLER_HARDENING -Force
+    New-Item -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl" -Name "FEATURE_ALLOW_USER32_EXCEPTION_HANDLER_HARDENING" -Force
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog iexplore
@@ -106,7 +106,7 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegName = "iexplore.exe"
     $RegValue = "1"
     #Reg Key does not yet exist
-    New-Item -Path HKLM:\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl -Name FEATURE_ALLOW_USER32_EXCEPTION_HANDLER_HARDENING -Force
+    New-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl" -Name "FEATURE_ALLOW_USER32_EXCEPTION_HANDLER_HARDENING" -Force
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog Allow Encryption Oracle
@@ -116,7 +116,7 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegName = "AllowEncryptionOracle"
     $RegValue = "1"
     #Reg Key does not yet exist
-    New-Item -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP -Name Parameters -Force
+    New-Item -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP" -Name "Parameters" -Force
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog Allow Encryption Oracle
@@ -126,7 +126,7 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegName = "AllowEncryptionOracle"
     $RegValue = "1"
     #Reg Key does not yet exist
-    New-Item -Path HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP -Name Parameters -Force
+    New-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Policies\System\CredSSP" -Name "Parameters" -Force
     New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
 
     ### MSS Settings - Eventlog Defalut Secure Protocols

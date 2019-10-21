@@ -76,7 +76,8 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegName = "iexplore.exe"
     $RegValue = "1"
     #Reg Key does not yet exist
-    New-Item -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl" -Name "FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX" -Force | New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force | Out-Null
+    #New-Item -Path "HKLM:\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl" -Name "FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX" -Force
+    #New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force 
 
     ### MSS Settings - Eventlog iexplore
     $TimeStamp = Get-Date
@@ -86,7 +87,8 @@ if ($OSVersion -eq "Microsoft Windows Server 2012 R2 Datacenter") {
     $RegValue = "1"
     #Reg Key does not yet exist
     New-Item -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl" -Name "FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX" -Force
-    New-ItemProperty -Path $RegPath -Name $RegName -Value $RegValue -PropertyType "DWord" -Force
+    New-ItemProperty -Path "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_ENABLE_PRINT_INFO_DISCLOSURE_FIX" -Name "1" -Value  -PropertyType "DWord" -Force
+
 
     ### MSS Settings - Eventlog iexplore
     $TimeStamp = Get-Date
